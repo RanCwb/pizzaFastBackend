@@ -34,6 +34,7 @@ export class AuthUserService {
     console.log(email, password)
 
 
+    // generate token for user authentication expires in 30 days
     const token = sign(
       {
         name: user.name,

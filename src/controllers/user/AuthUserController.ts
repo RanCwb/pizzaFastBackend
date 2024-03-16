@@ -20,6 +20,5 @@ import { AuthUserService } from "../../services/user/AuthUserService";
   }
 
 }
-// meetJwt
 export { AuthUserController } 
 
