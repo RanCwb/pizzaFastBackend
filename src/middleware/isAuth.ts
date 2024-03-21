@@ -32,6 +32,9 @@ export function isAuth(req: Request, res: Response, next: NextFunction) {
 
     const { sub } = verify(token, process.env.JWT_SECRET) as Payload;
 
+    
+    req.user_id = sub
+
     return next();
      
     
