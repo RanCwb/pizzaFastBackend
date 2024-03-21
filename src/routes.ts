@@ -6,6 +6,13 @@ import { DetailUserController } from "./controllers/user/DetailUserController";
 import { CreateCategoryController } from "./controllers/category/CreateCategoryController";
 import { ListCategoryController } from "./controllers/category/ListCategoryController";
 import { CreateProductController } from "./controllers/product/CreateProductController";
+import { ListProductController } from "./controllers/product/ListProductController";
+import { CreateOrderController } from "./controllers/order/CreateOrderController";
+import { RemoveOrderController } from "./controllers/order/RemoveOrderController";
+import { AddItemController } from "./controllers/order/AddItemController";
+import { RemoveItemController } from "./controllers/order/RemoveItemController";
+import { SendController } from "./controllers/order/SendController";
+import { ListOrderController } from "./controllers/order/ListOrderController";
 import uploadConfig from "./config/multer";
 
 import { isAuth } from "./middleware/isAuth";
@@ -25,4 +32,13 @@ router.post("/category", isAuth, new CreateCategoryController().handle)
 router.get("/category/list", isAuth, new ListCategoryController().handle)
 // product Routes
 router.post("/product", isAuth, upload.single("file"), new CreateProductController().handle) 
+router.get("/product/product", isAuth, new ListProductController().handle)
+// order Routes
+router.post("/order", isAuth, new CreateOrderController().handle)
+router.delete("/order/delete", isAuth, new RemoveOrderController().handle)
+router.post("/order/add", isAuth, new AddItemController().handle)
+router.delete("/order/remove", isAuth, new RemoveItemController().handle)
+router.put("/order/send", isAuth, new SendController().handle)
+router.get("/order/list", isAuth, new ListOrderController().handle)
+
 export default router;
