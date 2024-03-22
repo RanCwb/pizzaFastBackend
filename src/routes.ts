@@ -13,9 +13,11 @@ import { AddItemController } from "./controllers/order/AddItemController";
 import { RemoveItemController } from "./controllers/order/RemoveItemController";
 import { SendController } from "./controllers/order/SendController";
 import { ListOrderController } from "./controllers/order/ListOrderController";
+import { DetailOrderController } from "./controllers/order/DetailOrderController";
 import uploadConfig from "./config/multer";
 
 import { isAuth } from "./middleware/isAuth";
+import { FinishOrderController } from "./controllers/order/FinishOrderController";
 
 // finding detail users;
 
@@ -40,5 +42,7 @@ router.post("/order/add", isAuth, new AddItemController().handle)
 router.delete("/order/remove", isAuth, new RemoveItemController().handle)
 router.put("/order/send", isAuth, new SendController().handle)
 router.get("/order/list", isAuth, new ListOrderController().handle)
+router.get("/order/detail", isAuth, new DetailOrderController().handle)
+router.put("/order/finish", isAuth, new FinishOrderController().handle)
 
 export default router;
