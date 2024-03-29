@@ -7,7 +7,7 @@ class DetailOrderController {
 
   async handle(request: Request, response: Response) {
 
-    const  order_id  = request.params.order_id as string;
+    const  order_id  = request.query.order_id as string;
 
     const detailOrderService = new DetailOrderService();
 

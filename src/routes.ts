@@ -41,7 +41,7 @@ router.delete("/order/delete", isAuth, new RemoveOrderController().handle)
 router.post("/order/add", isAuth, new AddItemController().handle)
 router.delete("/order/remove", isAuth, new RemoveItemController().handle)
 router.put("/order/send", isAuth, new SendController().handle)
-router.get("/order/list", isAuth, new ListOrderController().handle)
+router.get("/orders", isAuth, new ListOrderController().handle)
 router.get("/order/detail", isAuth, new DetailOrderController().handle)
 router.put("/order/finish", isAuth, new FinishOrderController().handle)
 
