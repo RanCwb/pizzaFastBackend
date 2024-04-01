@@ -34,7 +34,7 @@ router.post("/category", isAuth, new CreateCategoryController().handle)
 router.get("/category/list", isAuth, new ListCategoryController().handle)
 // product Routes
 router.post("/product", isAuth, upload.single("file"), new CreateProductController().handle) 
-router.get("/product/product", isAuth, new ListProductController().handle)
+router.get("/category/product", isAuth, new ListProductController().handle)
 // order Routes
 router.post("/order", isAuth, new CreateOrderController().handle)
 router.delete("/order/delete", isAuth, new RemoveOrderController().handle)
